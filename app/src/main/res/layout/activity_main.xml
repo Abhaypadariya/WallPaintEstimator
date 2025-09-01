@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:text="🎨 Wall Paint Estimator"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Capture button -->
+        <Button
+            android:id="@+id/btnCapture"
+            android:text="📸 Capture Wall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Container with image + polygon selection -->
+        <FrameLayout
+            android:id="@+id/photoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="16dp"
+            android:background="#F0F0F0"
+            android:elevation="4dp"
+            android:padding="2dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:background="#E0E0E0" />
+
+
+
+            <com.example.wallpaintestimator.SelectionView
+                android:id="@+id/selectionView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/btnEstimateArea"
+            android:text="📐 Estimate Paint from Selection"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:text="♻️ Reset Selection"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <!-- Manual input button -->
+        <Button
+            android:id="@+id/btnManual"
+            android:text="✏️ Enter Manually"
+            android:backgroundTint="#03A9F4"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <!-- Result -->
+        <TextView
+            android:id="@+id/tvEstimate"
+            android:text="Estimated Paint: "
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="#FFF9C4"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
